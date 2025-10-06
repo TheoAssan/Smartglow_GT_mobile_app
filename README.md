@@ -6,7 +6,6 @@ A Flutter application for smart home automation with motion tracking capabilitie
 
 - **Home Control**: Control smart lights with manual and automatic modes
 - **Motion Tracking**: Real-time motion detection and logging from LD2410C radar sensor
-- **Data Logging**: Comprehensive logging of all device events
 - **Power Consumption**: Monitor energy usage statistics
 - **Settings**: Configure device preferences and connections
 
@@ -29,23 +28,9 @@ The motion tracker supports various data formats from the LD2410C sensor:
 
 ### MQTT Integration
 
-The motion tracker connects to a feed on Adafruit IO to receive real-time motion data and fetch historical records.
+The motion tracker connects to a feed on Adafruit IO to receive real-time motion data and fetch historical records from the microcontroller on which the sensor has been set up.
 
-## Setup
-
-1. Configure your `.env` file with Adafruit IO credentials:
-   ```
-   AIO_USERNAME=your_username
-   AIO_KEY=your_aio_key
-   ```
-
-2. Ensure your LD2410C sensor is publishing data to the `ld2410c-feeds.data-log` feed
-
-3. Run the application:
-   ```bash
-   flutter run
-   ```
-
-## Navigation
+Requires prior programming on the microcontrollers. 
 
 Access the Motion Tracker from the sidebar menu with the motion detection icon. The page includes smooth slide animations consistent with the rest of the application.
+
