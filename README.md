@@ -4,10 +4,10 @@ A Flutter application for smart home automation with motion tracking capabilitie
 
 ## Features
 
-- **Home Control**: Control smart lights with manual and automatic modes
-- **Motion Tracking**: Real-time motion detection and logging from LD2410C radar sensor
-- **Power Consumption**: Monitor energy usage statistics
-- **Settings**: Configure device preferences and connections
+- Control smart lights with manual and automatic modes with the help of NODEMCU and ESP-32 WROOM microcontrollers
+- Real-time motion detection and logging from LD2410C radar sensor 
+- Monitor energy usage statistics
+- Configure device preferences and connections
 
 ## Motion Tracker
 
@@ -33,4 +33,5 @@ The motion tracker connects to a feed on Adafruit IO to receive real-time motion
 Requires prior programming on the microcontrollers. 
 
 Access the Motion Tracker from the sidebar menu with the motion detection icon. The page includes smooth slide animations consistent with the rest of the application.
+
 
