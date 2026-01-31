@@ -1,6 +1,6 @@
 # SmartGlow GT
 
-A Flutter application for smart automation of lights with presence detection capabilities.
+A Flutter application for smart automation of lights with presence detection capabilities. Build with Android Studio
 
 ## Features
 
@@ -33,6 +33,7 @@ The motion tracker connects to a feed on Adafruit IO to receive real-time motion
 Requires prior programming on the microcontrollers. 
 
 Access the Motion Tracker from the sidebar menu with the motion detection icon. The page includes smooth slide animations consistent with the rest of the application.
+
 
 
 
