@@ -20,6 +20,13 @@ jobs:
           channel: stable
           cache: true
 
+      - name: Accept licenses and install NDK
+        run: |
+          SDKMANAGER=$(find "${ANDROID_SDK_ROOT:-$ANDROID_HOME}" -name sdkmanager -type f | head -1)
+          echo "Using sdkmanager: $SDKMANAGER"
+          yes | "$SDKMANAGER" --licenses
+          "$SDKMANAGER" --install "ndk;29.0.13113456"
+
       - name: Create .env if missing
         run: |
           if [ ! -f .env ]; then
