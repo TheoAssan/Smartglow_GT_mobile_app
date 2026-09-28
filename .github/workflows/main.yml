@@ -1,9 +1,6 @@
-name: Build Flutter APK
+name: Build SmartGlow GT APK
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
 
 jobs:
@@ -19,14 +16,17 @@ jobs:
         with:
           channel: stable
 
+      - name: Check Flutter version
+        run: flutter --version
+
+      - name: Accept Android licenses
+        run: yes | flutter doctor --android-licenses
+
+      - name: Install Android NDK
+        run: sdkmanager --install "ndk;29.0.13113456"
+
       - name: Get dependencies
         run: flutter pub get
-
-      - name: Accept Android SDK licenses
-        run: yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses
-
-      - name: Install Android NDK 29
-        run: $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "ndk;29.0.13113456"
 
       - name: Build APK
         run: flutter build apk --release --android-skip-build-dependency-validation
@@ -34,5 +34,5 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: smartglow-release-apk
+          name: SmartGlow-GT-APK
           path: build/app/outputs/flutter-apk/app-release.apk
